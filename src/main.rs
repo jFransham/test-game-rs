@@ -4,8 +4,10 @@ extern crate glutin_window;
 extern crate opengl_graphics;
 
 mod colors;
+mod gameobject;
 mod app;
 mod renderable;
+mod physics;
 
 use app::*;
 
@@ -18,7 +20,8 @@ fn main() {
 
     let opengl = OpenGL::V3_2;
     let maybe_window: Result<Window, _> = WindowSettings::new(
-            "test", [640, 480]
+            "test",
+            [640, 480]
         )
         .opengl(opengl)
         .exit_on_esc(true)
